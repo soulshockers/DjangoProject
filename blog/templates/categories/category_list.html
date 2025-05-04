@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <p>Categories</p>
+
+    <ul>
+        {% for category in categories %}
+            <li>
+                <a href="{% url 'blog:category_detail' category.id %}">{{ category }}</a>
+            </li>
+        {% empty %}
+            <li>Not categories have been added yet.</li>
+        {% endfor %}
+    </ul>
+
+    <a href="{% url 'blog:category_add' %}">Add new category</a>
+{% endblock %}

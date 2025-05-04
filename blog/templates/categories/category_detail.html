@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <p>{{ category }}</p>
+    <p><a href="{% url 'blog:category_edit' category_id=category.id %}">Edit category</a></p>
+
+    <p>Posts:</p>
+
+    <ul>
+        {% for post in posts %}
+            <li><a href="{% url 'blog:post_detail' post.id %}">{{ post }}</a></li>
+        {% empty %}
+            <li>Not posts have been added yet.</li>
+        {% endfor %}
+    </ul>
+
+    <p><a href="{% url 'blog:post_add' category.id %}">Add new post</a></p>
+{% endblock %}
