@@ -40,7 +40,6 @@ INSTALLED_APPS = [
     'blog.apps.BlogConfig',
 
     # Third-party apps
-    'whitenoise.middleware.WhiteNoiseMiddleware',
 
     # Default Django apps
     'django.contrib.admin',
@@ -53,6 +52,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
